@@ -2,7 +2,31 @@
   <div id="app">
     <el-container>
       <el-header>
-        GULEX    
+        <el-row :gutter="20">
+          <el-col :span="6">
+            <div class="grid-content bg-purple">GULEX</div>
+          </el-col>
+          <el-col :span="3">
+            <div class="grid-content bg-purple">
+              <router-link to="/bluechiplist">blue chips</router-link>
+            </div>
+          </el-col>
+          <el-col :span="3">
+            <div class="grid-content bg-purple">
+              <router-link to="/goodstocks">good stocks</router-link>
+            </div>
+          </el-col>
+          <el-col :span="3">
+            <div class="grid-content bg-purple">
+              <router-link to="/traderecords">trade records</router-link>
+            </div>
+          </el-col>
+          <el-col :span="3">
+            <div class="grid-content bg-purple">
+              <router-link to="/onhands">on hand</router-link>
+            </div>
+          </el-col>
+        </el-row>
       </el-header>
       <el-main>
         <router-view/>
@@ -58,4 +82,5 @@ export default {
   .el-container:nth-child(7) .el-aside {
     line-height: 320px;
   }
+  
 </style>
