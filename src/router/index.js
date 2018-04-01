@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import goodstocks from '@/components/goodstocks'
+import cashandvalues from '@/components/cashandvalues'
 import bluechiplist from '@/components/bluechiplist'
 import traderecords from '@/components/traderecords'
+import valuechart from '@/components/valuechart'
 import onhands from '@/components/onhands'
 
 Vue.use(Router)
@@ -30,9 +31,14 @@ export default new Router({
       component: bluechiplist
     },
     {
-      path: '/goodstocks',
-      name: 'goodstocks',
-      component: goodstocks
+      path: '/cashandvalues',
+      name: 'cashandvalues',
+      component: cashandvalues
+    },
+    {
+      path: '/valuechart',
+      name: 'valuechart',
+      component: valuechart
     }
   ]
 })

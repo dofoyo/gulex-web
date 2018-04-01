@@ -13,17 +13,22 @@
           </el-col>
           <el-col :span="3">
             <div class="grid-content bg-purple">
-              <router-link to="/goodstocks">good stocks</router-link>
-            </div>
-          </el-col>
-          <el-col :span="3">
-            <div class="grid-content bg-purple">
               <router-link to="/traderecords">trade records</router-link>
             </div>
           </el-col>
           <el-col :span="3">
             <div class="grid-content bg-purple">
               <router-link to="/onhands">on hand</router-link>
+            </div>
+          </el-col>
+          <el-col :span="3">
+            <div class="grid-content bg-purple">
+              <router-link to="/cashandvalues">cash and value</router-link>
+            </div>
+          </el-col>
+          <el-col :span="3">
+            <div class="grid-content bg-purple">
+              <router-link to="/valuechart">value chart</router-link>
             </div>
           </el-col>
         </el-row>

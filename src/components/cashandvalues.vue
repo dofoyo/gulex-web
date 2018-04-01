@@ -8,28 +8,20 @@
         type="index">
       </el-table-column>
       <el-table-column
-        prop="code"
-        label="代码">
+        prop="date"
+        label="日期">
       </el-table-column>
       <el-table-column
-        prop="name"
-        label="名称">
+        prop="cash"
+        label="现金">
       </el-table-column>
       <el-table-column
-        prop="goodTimes"
-        label="入选次数">
+        prop="value"
+        label="市值">
       </el-table-column>
       <el-table-column
-        prop="goodPeriod"
-        label="入选年份">
-      </el-table-column>
-      <el-table-column
-        prop="lastPeriod"
-        label="截止年份">
-      </el-table-column>
-      <el-table-column
-        prop="upProbability"
-        label="上涨概率">
+        prop="total"
+        label="合计">
       </el-table-column>
     </el-table>
 </template>
@@ -48,7 +40,7 @@ export default {
   methods:{
     getData:function(){      
       var vm = this;
-      var apiurl = process.env.API_ROOT + 'goodStocks';
+      var apiurl = process.env.API_ROOT + 'values';
       this.$http.get(apiurl)
               .then(function(response){
                 vm.stocks = response.data.content;

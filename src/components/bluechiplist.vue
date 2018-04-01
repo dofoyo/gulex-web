@@ -21,6 +21,10 @@
         label="名称">
       </el-table-column>
       <el-table-column
+        prop="okYears"
+        label="入选年份">
+      </el-table-column>
+      <el-table-column
         prop="upProbability"
         label="上涨概率">
       </el-table-column>
