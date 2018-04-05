@@ -8,15 +8,25 @@
     @change="getData">
   </el-date-picker>
 </div> -->
-    <el-table :data="list" style="width:85%" border :show-header="true" show-summary>
-      <el-table-column type="index" align="right"></el-table-column>
-      <el-table-column prop="name" label="股票" align="center"></el-table-column>
-      <el-table-column prop="tradeDate" label="买入日期" align="center" sortable></el-table-column>
-      <el-table-column prop="quantity" label="数量" align="right"></el-table-column>
-      <el-table-column prop="cost" label="成本" align="right"></el-table-column>
-      <el-table-column prop="price" label="现价" align="right"></el-table-column>
-      <el-table-column prop="value" label="市值" align="right" sortable></el-table-column>
-      <el-table-column prop="profit" label="盈亏" align="right" sortable></el-table-column>
+    <el-table
+      :data="list"
+      style="width:70%"
+      border
+      :show-header="true"  show-summary>
+      <el-table-column type="index"></el-table-column>
+
+      <el-table-column prop="stockname" label="股票"  align="center" sortable></el-table-column>
+
+      <el-table-column prop="quantity" label="数量"  align="right"> </el-table-column >
+
+      <el-table-column prop="buyDate" label="买入日期"  align="center" sortable> </el-table-column>
+      <el-table-column  prop="buyPrice" label="买入价格"  align="right">  </el-table-column>
+
+      <el-table-column prop="sellDate"  label="卖出日期"  align="center" sortable>  </el-table-column>
+      <el-table-column prop="sellPrice"  label="卖出(最新)价格"  align="right"> </el-table-column>
+
+      <el-table-column prop="profit"  label="盈亏"  align="right" sortable> </el-table-column>
+
     </el-table>
   </div>
 </template>
@@ -36,7 +46,7 @@ export default {
   methods:{
     getData:function(){      
       var vm = this;
-      var apiurl = process.env.API_ROOT + 'onhands';
+      var apiurl = process.env.API_ROOT + 'traderecordplus';
       this.$http.get(apiurl)
               .then(function(response){
                 vm.list = response.data.content;

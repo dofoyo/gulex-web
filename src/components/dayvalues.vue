@@ -1,7 +1,8 @@
 <template>
+   <div  align="center">
     <el-table
-      :data="stocks"
-      style="width:100%"
+      :data="list"
+      style="width:50%"
       border
       :show-header="true">
       <el-table-column
@@ -9,21 +10,22 @@
       </el-table-column>
       <el-table-column
         prop="date"
-        label="日期">
+        label="日期"  align="center">
       </el-table-column>
       <el-table-column
         prop="cash"
-        label="现金">
+        label="现金"  align="right">
       </el-table-column>
       <el-table-column
         prop="value"
-        label="市值">
+        label="市值"  align="right">
       </el-table-column>
       <el-table-column
         prop="total"
-        label="合计">
+        label="合计"  align="right">
       </el-table-column>
     </el-table>
+  </div>
 </template>
 
 <script>
@@ -31,7 +33,7 @@ export default {
   name: 'goodstocks',
   data () {
     return {
-      stocks:[]
+      list:[]
     }
   },
   mounted: function() {
@@ -40,10 +42,10 @@ export default {
   methods:{
     getData:function(){      
       var vm = this;
-      var apiurl = process.env.API_ROOT + 'values';
+      var apiurl = process.env.API_ROOT + 'dayvalues';
       this.$http.get(apiurl)
               .then(function(response){
-                vm.stocks = response.data.content;
+                vm.list = response.data.content;
                 //console.log(vm.questions);
              })
               .catch(function(response) {

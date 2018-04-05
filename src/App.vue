@@ -4,31 +4,43 @@
       <el-header>
         <el-row :gutter="20">
           <el-col :span="6">
-            <div class="grid-content bg-purple">GULEX</div>
-          </el-col>
-          <el-col :span="3">
             <div class="grid-content bg-purple">
-              <router-link to="/bluechiplist">blue chips</router-link>
+              GULEX 1.0
             </div>
           </el-col>
-          <el-col :span="3">
+          <el-col :span="2">
             <div class="grid-content bg-purple">
-              <router-link to="/traderecords">trade records</router-link>
+              <router-link to="/bluechiplist">候选股</router-link>
             </div>
           </el-col>
-          <el-col :span="3">
+<!--           <el-col :span="3">
+  <div class="grid-content bg-purple">
+    <router-link to="/bluechiplistplus">候选股2</router-link>
+  </div>
+</el-col> -->
+          <el-col :span="2">
             <div class="grid-content bg-purple">
-              <router-link to="/onhands">on hand</router-link>
+              <router-link to="/traderecords">交易明细</router-link>
             </div>
           </el-col>
-          <el-col :span="3">
+          <el-col :span="2">
             <div class="grid-content bg-purple">
-              <router-link to="/cashandvalues">cash and value</router-link>
+              <router-link to="/traderecordplus">个股盈亏</router-link>
             </div>
           </el-col>
-          <el-col :span="3">
+          <el-col :span="2">
             <div class="grid-content bg-purple">
-              <router-link to="/valuechart">value chart</router-link>
+              <router-link to="/onhands">当前持仓</router-link>
+            </div>
+          </el-col>
+          <el-col :span="2">
+            <div class="grid-content bg-purple">
+              <router-link to="/yearvalues">市值</router-link>
+            </div>
+          </el-col>
+          <el-col :span="2">
+            <div class="grid-content bg-purple">
+              <router-link to="/valuechart">回报率</router-link>
             </div>
           </el-col>
         </el-row>
@@ -48,8 +60,8 @@ export default {
 
 <style>
   .el-header {
-    background-color: #B3C0D1;
-    color: #333;
+    background-color: #333333;
+    color: #FFFFFF;
     text-align: left;
     line-height: 60px;
   }
@@ -69,10 +81,9 @@ export default {
   }
   
   .el-main {
-    background-color: #E9EEF3;
+    background-color: #CCCCCC;
     color: #333;
     text-align: left;
-    line-height: 160px;
   }
   
   body > .el-container {
@@ -87,5 +98,12 @@ export default {
   .el-container:nth-child(7) .el-aside {
     line-height: 320px;
   }
+
+  a {
+    text-decoration:none;
+    color:#FFFFFF;
+  }
+  a:active{ color:#990033;}
+
   
 </style>

@@ -1,10 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import cashandvalues from '@/components/cashandvalues'
+import dayvalues from '@/components/dayvalues'
+import yearvalues from '@/components/yearvalues'
 import bluechiplist from '@/components/bluechiplist'
+import bluechiplistplus from '@/components/bluechiplistplus'
+import traderecordplus from '@/components/traderecordplus'
 import traderecords from '@/components/traderecords'
 import valuechart from '@/components/valuechart'
 import onhands from '@/components/onhands'
+import nodzh from '@/components/nodzh'
 
 Vue.use(Router)
 
@@ -31,14 +35,29 @@ export default new Router({
       component: bluechiplist
     },
     {
-      path: '/cashandvalues',
-      name: 'cashandvalues',
-      component: cashandvalues
+      path: '/dayvalues',
+      name: 'dayvalues',
+      component: dayvalues
+    },
+    {
+      path: '/yearvalues',
+      name: 'yearvalues',
+      component: yearvalues
     },
     {
       path: '/valuechart',
       name: 'valuechart',
       component: valuechart
+    },
+    {
+      path: '/bluechiplistplus',
+      name: 'bluechiplistplus',
+      component: bluechiplistplus
+    },
+    {
+      path: '/nodzh',
+      name: 'nodzh',
+      component: nodzh
     }
   ]
 })

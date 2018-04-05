@@ -1,0 +1,74 @@
+<template>
+   <div align="center">
+    <div>
+      <img src="/static/valuebar201804.png" height="348" width="767">
+    </div>
+    <p></p>
+    <div >
+      <el-table
+        :data="list"
+        style="width:60%"
+        border
+        :show-header="true">
+        <el-table-column
+          type="index">
+        </el-table-column>
+        <el-table-column
+          prop="date"
+          label="日期"  align="center">
+        </el-table-column>
+        <el-table-column
+          prop="cash"
+          label="现金"  align="right">
+        </el-table-column>
+        <el-table-column
+          prop="value"
+          label="市值"  align="right">
+        </el-table-column>
+        <el-table-column
+          prop="total"
+          label="合计"  align="right">
+        </el-table-column>
+      </el-table>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'goodstocks',
+  data () {
+    return {
+      list:[]
+    }
+  },
+  mounted: function() {
+    this.getData();
+  },
+  methods:{
+    getData:function(){      
+      var vm = this;
+      var apiurl = process.env.API_ROOT + 'yearvalues';
+      this.$http.get(apiurl)
+              .then(function(response){
+                vm.list = response.data.content;
+                //console.log(vm.questions);
+             })
+              .catch(function(response) {
+                console.log("getData: there are something wrong!!!");
+                console.log(apiurl)
+                console.log(response);
+              })
+
+    }
+  }
+
+
+
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+
+</style>

@@ -8,35 +8,45 @@
     @change="getData">
   </el-date-picker>
 </div> -->
-    <el-table
+    <el-table show-summary
       :data="list"
-      style="width:70%"
+      style="width:80%"
       border
-      :show-header="true">
+      :show-header="true"
+      class="el-table__body">
       <el-table-column
         type="index">
       </el-table-column>
-      <el-table-column
-        prop="date"
-        label="日期"  align="center" sortable>
-      </el-table-column>
-      <el-table-column
-        prop="stockname"
-        label="股票"  align="center" sortable>
-      </el-table-column>
-      <el-table-column
-        prop="buyorsell"
-        label="买入/卖出"  align="center">
-      </el-table-column>
-      <el-table-column
-        prop="price"
-        label="价格"  align="right">
-      </el-table-column>
-      <el-table-column
-        prop="quantity"
-        label="数量"  align="right">
-      </el-table-column >
 
+      <el-table-column
+        prop="name"
+        label="名称">
+      </el-table-column>
+
+      <el-table-column
+        prop="okYears"
+        label="入选年份">
+      </el-table-column>
+
+      <el-table-column
+        prop="aboveAv120Days"
+        label="近100日内股价在120日线上天数">
+      </el-table-column>      
+
+      <el-table-column
+        prop="biasOfAv120"
+        label="当前股价与120日线偏离值">
+      </el-table-column>      
+
+      <el-table-column
+        prop="biasOfMidPrice"
+        label="当前股价与股价中位数偏离值">
+      </el-table-column>
+
+      <el-table-column
+        prop="upProbability"
+        label="上涨概率"  align="center">
+      </el-table-column>
 
     </el-table>
   </div>
@@ -57,8 +67,8 @@ export default {
   methods:{
     getData:function(){      
       var vm = this;
-      var apiurl = process.env.API_ROOT + 'traderecords';
-      this.$http.get(apiurl)
+      var apiurl = process.env.API_ROOT + 'bluechips';
+      this.$http.get(apiurl,{params:{'date':vm.thedate}})
               .then(function(response){
                 vm.list = response.data.content;
                 //console.log(vm.questions);
@@ -79,5 +89,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>

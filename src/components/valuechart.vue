@@ -1,14 +1,8 @@
 <template>
-    <div id="app">
+    <div id="app"  align="center">
         <div class="row">
             <div align="center">
-             <img src="/static/repay20180401.png" height="339" width="911">
-             </div>
-             <div align="center">
-             <img src="/static/hxdp000011valueline20180401.png" height="339" width="911">
-             </div>
-            <div align="center">
-             <img src="/static/valuebar201804.png" height="339" width="911">
+                <img src="/static/repay20180401.png">
              </div>
         </div>
     </div>
