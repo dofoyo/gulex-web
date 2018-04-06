@@ -8,7 +8,7 @@ import traderecordplus from '@/components/traderecordplus'
 import traderecords from '@/components/traderecords'
 import valuechart from '@/components/valuechart'
 import onhands from '@/components/onhands'
-import nodzh from '@/components/nodzh'
+import dzh from '@/components/dzh'
 
 Vue.use(Router)
 
@@ -28,6 +28,11 @@ export default new Router({
       path: '/traderecords',
       name: 'traderecords',
       component: traderecords
+    },
+    {
+      path: '/traderecordplus',
+      name: 'traderecordplus',
+      component: traderecordplus
     },
     {
       path: '/bluechiplist',
@@ -55,9 +60,9 @@ export default new Router({
       component: bluechiplistplus
     },
     {
-      path: '/nodzh',
-      name: 'nodzh',
-      component: nodzh
+      path: '/dzh',
+      name: 'dzh',
+      component: dzh
     }
   ]
 })
