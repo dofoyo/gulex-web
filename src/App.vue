@@ -20,12 +20,12 @@
 </el-col> -->
           <el-col :span="2">
             <div class="grid-content bg-purple">
-              <router-link to="/traderecords">交易明细</router-link>
+              <router-link to="/simulations">交易明细</router-link>
             </div>
           </el-col>
           <el-col :span="2">
             <div class="grid-content bg-purple">
-              <router-link to="/traderecordplus">个股盈亏</router-link>
+              <router-link to="/simulationplus">个股盈亏</router-link>
             </div>
           </el-col>
           <el-col :span="2">

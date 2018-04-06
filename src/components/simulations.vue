@@ -12,20 +12,35 @@
       :data="list"
       style="width:70%"
       border
-      :show-header="true"  show-summary>
-      <el-table-column type="index"></el-table-column>
+      :show-header="true">
+      <el-table-column
+        type="index">
+      </el-table-column>
+      <el-table-column
+        prop="date"
+        label="日期"  align="center" sortable>
+      </el-table-column>
+      <el-table-column
+        prop="stockcode"
+        label="代码"  align="center" sortable>
+      </el-table-column>
+      <el-table-column
+        prop="stockname"
+        label="名称"  align="center" sortable>
+      </el-table-column>
+      <el-table-column
+        prop="buyorsell"
+        label="买入/卖出"  align="center">
+      </el-table-column>
+      <el-table-column
+        prop="price"
+        label="价格"  align="right">
+      </el-table-column>
+      <el-table-column
+        prop="quantity"
+        label="数量"  align="right">
+      </el-table-column >
 
-      <el-table-column prop="stockname" label="股票"  align="center" sortable></el-table-column>
-
-      <el-table-column prop="quantity" label="数量"  align="right"> </el-table-column >
-
-      <el-table-column prop="buyDate" label="买入日期"  align="center" sortable> </el-table-column>
-      <el-table-column  prop="buyPrice" label="买入价格"  align="right">  </el-table-column>
-
-      <el-table-column prop="sellDate"  label="卖出日期"  align="center" sortable>  </el-table-column>
-      <el-table-column prop="sellPrice"  label="卖出(最新)价格"  align="right"> </el-table-column>
-
-      <el-table-column prop="profit"  label="盈亏"  align="right" sortable> </el-table-column>
 
     </el-table>
   </div>
@@ -46,7 +61,7 @@ export default {
   methods:{
     getData:function(){      
       var vm = this;
-      var apiurl = process.env.API_ROOT + 'traderecordplus';
+      var apiurl = process.env.API_ROOT + 'simulations';
       this.$http.get(apiurl)
               .then(function(response){
                 vm.list = response.data.content;

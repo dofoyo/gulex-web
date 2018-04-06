@@ -10,7 +10,8 @@
 </div> -->
     <el-table :data="list" style="width:85%" border :show-header="true" show-summary>
       <el-table-column type="index" align="right"></el-table-column>
-      <el-table-column prop="name" label="股票" align="center"></el-table-column>
+      <el-table-column prop="code" label="代码" align="center"></el-table-column>
+      <el-table-column prop="name" label="名称" align="center"></el-table-column>
       <el-table-column prop="tradeDate" label="买入日期" align="center" sortable></el-table-column>
       <el-table-column prop="quantity" label="数量" align="right"></el-table-column>
       <el-table-column prop="cost" label="成本" align="right"></el-table-column>

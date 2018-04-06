@@ -4,8 +4,8 @@ import dayvalues from '@/components/dayvalues'
 import yearvalues from '@/components/yearvalues'
 import bluechiplist from '@/components/bluechiplist'
 import bluechiplistplus from '@/components/bluechiplistplus'
-import traderecordplus from '@/components/traderecordplus'
-import traderecords from '@/components/traderecords'
+import simulationplus from '@/components/simulationplus'
+import simulations from '@/components/simulations'
 import valuechart from '@/components/valuechart'
 import onhands from '@/components/onhands'
 import dzh from '@/components/dzh'
@@ -25,14 +25,14 @@ export default new Router({
       component: onhands
     },
     {
-      path: '/traderecords',
-      name: 'traderecords',
-      component: traderecords
+      path: '/simulations',
+      name: 'simulations',
+      component: simulations
     },
     {
-      path: '/traderecordplus',
-      name: 'traderecordplus',
-      component: traderecordplus
+      path: '/simulationplus',
+      name: 'simulationplus',
+      component: simulationplus
     },
     {
       path: '/bluechiplist',
