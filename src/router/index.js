@@ -9,6 +9,7 @@ import simulations from '@/components/simulations'
 import valuechart from '@/components/valuechart'
 import onhands from '@/components/onhands'
 import dzh from '@/components/dzh'
+import readme from '@/components/readme'
 
 Vue.use(Router)
 
@@ -63,6 +64,11 @@ export default new Router({
       path: '/dzh',
       name: 'dzh',
       component: dzh
+    },
+    {
+      path: '/readme',
+      name: 'readme',
+      component: readme
     }
   ]
 })

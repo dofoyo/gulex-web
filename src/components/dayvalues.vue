@@ -1,5 +1,8 @@
 <template>
    <div  align="center">
+    <div v-show="isloading">
+      <i class="el-icon-loading"></i>
+    </div>
     <el-table
       :data="list"
       style="width:50%"
@@ -33,7 +36,8 @@ export default {
   name: 'goodstocks',
   data () {
     return {
-      list:[]
+      list:[],
+      isloading:true
     }
   },
   mounted: function() {
@@ -42,13 +46,16 @@ export default {
   methods:{
     getData:function(){      
       var vm = this;
+      vm.isloading=true;
       var apiurl = process.env.API_ROOT + 'dayvalues';
       this.$http.get(apiurl)
               .then(function(response){
+                vm.isloading=false;
                 vm.list = response.data.content;
                 //console.log(vm.questions);
              })
               .catch(function(response) {
+                vm.isloading=false;
                 console.log("getData: there are something wrong!!!");
                 console.log(apiurl)
                 console.log(response);

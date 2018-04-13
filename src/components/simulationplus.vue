@@ -8,6 +8,10 @@
     @change="getData">
   </el-date-picker>
 </div> -->
+    <div v-show="isloading">
+      <i class="el-icon-loading"></i>
+    </div>
+    
     <el-table
       :data="list"
       style="width:70%"
@@ -38,7 +42,8 @@ export default {
   data () {
     return {
       list:[],
-      thedate:''
+      thedate:'',
+      isloading:true
     }
   },
   mounted: function() {
@@ -47,13 +52,16 @@ export default {
   methods:{
     getData:function(){      
       var vm = this;
+      vm.isloading=true;
       var apiurl = process.env.API_ROOT + 'simulationplus';
       this.$http.get(apiurl)
               .then(function(response){
+                vm.isloading=false;
                 vm.list = response.data.content;
                 //console.log(vm.questions);
              })
               .catch(function(response) {
+                vm.isloading=false;
                 console.log("getData: there are something wrong!!!");
                 console.log(apiurl)
                 console.log(response);

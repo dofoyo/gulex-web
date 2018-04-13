@@ -4,6 +4,9 @@
       <img src="/static/valuebar201804.png" height="348" width="767">
     </div>
     <p></p>
+    <div v-show="isloading">
+      <i class="el-icon-loading"></i>
+    </div>
     <div >
       <el-table
         :data="list"
@@ -27,7 +30,7 @@
         </el-table-column>
         <el-table-column
           prop="total"
-          label="合计"  align="right">
+          label="净值"  align="right">
         </el-table-column>
       </el-table>
     </div>
@@ -39,7 +42,8 @@ export default {
   name: 'goodstocks',
   data () {
     return {
-      list:[]
+      list:[],
+      isloading:true
     }
   },
   mounted: function() {
@@ -48,13 +52,16 @@ export default {
   methods:{
     getData:function(){      
       var vm = this;
+      vm.isloading=true;
       var apiurl = process.env.API_ROOT + 'yearvalues';
       this.$http.get(apiurl)
               .then(function(response){
+                vm.isloading=false;
                 vm.list = response.data.content;
                 //console.log(vm.questions);
              })
               .catch(function(response) {
+                vm.isloading=false;
                 console.log("getData: there are something wrong!!!");
                 console.log(apiurl)
                 console.log(response);

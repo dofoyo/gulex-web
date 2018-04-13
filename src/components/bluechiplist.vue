@@ -8,6 +8,10 @@
     @change="getData">
   </el-date-picker>
 </div> -->
+    
+    <div v-show="isloading">
+      <i class="el-icon-loading"></i>
+    </div>
     <el-table
       :data="list"
       style="width:50%"
@@ -29,8 +33,8 @@
         prop="upProbability"
         label="上涨概率"  align="center">
       </el-table-column>
-
     </el-table>
+
   </div>
 </template>
 
@@ -40,7 +44,8 @@ export default {
   data () {
     return {
       list:[],
-      thedate:''
+      thedate:'',
+      isloading:true
     }
   },
   mounted: function() {
@@ -49,13 +54,16 @@ export default {
   methods:{
     getData:function(){      
       var vm = this;
+      vm.isloading=true;
       var apiurl = process.env.API_ROOT + 'bluechips';
       this.$http.get(apiurl,{params:{'date':vm.thedate}})
               .then(function(response){
                 vm.list = response.data.content;
+                vm.isloading = false;
                 //console.log(vm.questions);
              })
               .catch(function(response) {
+                vm.isloading = false;
                 console.log("getData: there are something wrong!!!");
                 console.log(apiurl)
                 console.log(response);

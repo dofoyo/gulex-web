@@ -8,6 +8,10 @@
     @change="getData">
   </el-date-picker>
 </div> -->
+      <div v-show="isloading">
+      <i class="el-icon-loading"></i>
+    </div>
+
     <div align="right"><el-button type="primary" icon="el-icon-upload2" 
       @click="doSelect">上传</el-button><el-button type="primary" icon="el-icon-refresh" 
       @click="refresh">刷新</el-button></div>
@@ -49,7 +53,8 @@ export default {
   data () {
     return {
       list:[],
-      thedate:''
+      thedate:'',
+      isloading:true
     }
   },
   mounted: function() {
@@ -58,13 +63,16 @@ export default {
   methods:{
     getData:function(){      
       var vm = this;
+      vm.isloading=true;
       var apiurl = process.env.API_ROOT + 'dzh';
       this.$http.get(apiurl)
               .then(function(response){
+                vm.isloading=false;
                 vm.list = response.data.content;
                 //console.log(vm.questions);
              })
               .catch(function(response) {
+                vm.isloading=false;
                 console.log("getData: there are something wrong!!!");
                 console.log(apiurl)
                 console.log(response);

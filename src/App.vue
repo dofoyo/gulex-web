@@ -3,9 +3,9 @@
     <el-container>
       <el-header>
         <el-row :gutter="20">
-          <el-col :span="6">
+          <el-col :span="4">
             <div class="grid-content bg-purple">
-              GULEX 1.0
+              GULEX 2.0
             </div>
           </el-col>
           <el-col :span="2">
@@ -35,12 +35,17 @@
           </el-col>
           <el-col :span="2">
             <div class="grid-content bg-purple">
-              <router-link to="/yearvalues">市值</router-link>
+              <router-link to="/yearvalues">净值</router-link>
             </div>
           </el-col>
           <el-col :span="2">
             <div class="grid-content bg-purple">
               <router-link to="/valuechart">回报率</router-link>
+            </div>
+          </el-col>
+           <el-col :span="2">
+            <div class="grid-content bg-purple">
+              <router-link to="/readme">说明</router-link>
             </div>
           </el-col>
         </el-row>
