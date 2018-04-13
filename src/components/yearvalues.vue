@@ -1,7 +1,7 @@
 <template>
    <div align="center">
     <div>
-      <img src="/static/valuebar201804.png" height="348" width="767">
+      <img src="/static/valuebar201804.png">
     </div>
     <p></p>
     <div v-show="isloading">
@@ -10,7 +10,7 @@
     <div >
       <el-table
         :data="list"
-        style="width:60%"
+        style="width:100%"
         border
         :show-header="true">
         <el-table-column

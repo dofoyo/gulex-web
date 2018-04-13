@@ -14,7 +14,7 @@
     
     <el-table
       :data="list"
-      style="width:70%"
+      style="width:100%"
       border
       :show-header="true"  show-summary>
       <el-table-column type="index"></el-table-column>

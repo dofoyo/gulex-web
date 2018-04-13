@@ -5,7 +5,7 @@
     </div>
     <el-table
       :data="list"
-      style="width:50%"
+      style="width:100%"
       border
       :show-header="true">
       <el-table-column

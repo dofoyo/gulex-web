@@ -17,8 +17,9 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'bluechiplist',
-      component: bluechiplist
+      redirect: {
+        name: 'bluechiplist'
+      }
     },
     {
       path: '/onhands',

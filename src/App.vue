@@ -2,53 +2,25 @@
   <div id="app">
     <el-container>
       <el-header>
-        <el-row :gutter="20">
-          <el-col :span="4">
-            <div class="grid-content bg-purple">
-              GULEX 2.0
-            </div>
-          </el-col>
-          <el-col :span="2">
-            <div class="grid-content bg-purple">
-              <router-link to="/bluechiplist">候选股</router-link>
-            </div>
-          </el-col>
-<!--           <el-col :span="3">
-  <div class="grid-content bg-purple">
-    <router-link to="/bluechiplistplus">候选股2</router-link>
-  </div>
-</el-col> -->
-          <el-col :span="2">
-            <div class="grid-content bg-purple">
-              <router-link to="/simulations">交易明细</router-link>
-            </div>
-          </el-col>
-          <el-col :span="2">
-            <div class="grid-content bg-purple">
-              <router-link to="/simulationplus">个股盈亏</router-link>
-            </div>
-          </el-col>
-          <el-col :span="2">
-            <div class="grid-content bg-purple">
-              <router-link to="/onhands">当前持仓</router-link>
-            </div>
-          </el-col>
-          <el-col :span="2">
-            <div class="grid-content bg-purple">
-              <router-link to="/yearvalues">净值</router-link>
-            </div>
-          </el-col>
-          <el-col :span="2">
-            <div class="grid-content bg-purple">
-              <router-link to="/valuechart">回报率</router-link>
-            </div>
-          </el-col>
-           <el-col :span="2">
-            <div class="grid-content bg-purple">
-              <router-link to="/readme">说明</router-link>
-            </div>
-          </el-col>
-        </el-row>
+           <el-menu default-active="0" class="el-menu-demo" mode="horizontal" @select="handleSelect"
+             background-color="#333333"
+            text-color="#fff"
+            active-text-color="#ffd04b"
+           >
+            <el-submenu index="0">
+              <template slot="title">GULEX</template>
+                <el-menu-item index="0"><router-link to="/bluechiplist">候选股</router-link></el-menu-item>
+                <el-menu-item index="1"><router-link to="/simulations">交易明细</router-link></el-menu-item>
+                <el-menu-item index="2"><router-link to="/simulationplus">个股盈亏</router-link></el-menu-item>
+                <el-menu-item index="3"><router-link to="/onhands">当前持仓</router-link></el-menu-item>
+                <el-menu-item index="4"><router-link to="/yearvalues">净值</router-link></el-menu-item>
+                <el-menu-item index="5"><router-link to="/valuechart">回报率</router-link></el-menu-item>
+                <el-menu-item index="6"><router-link to="/readme">说明</router-link></el-menu-item>
+            </el-submenu>
+            
+            <div align="center">{{title}}</div>
+          </el-menu>
+
       </el-header>
       <el-main>
         <router-view/>
@@ -59,7 +31,19 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+      return {
+        title: '候选股',
+        items:['候选股','交易明细','个股盈亏','当前持仓','净值','回报率','说明']
+      };
+    },
+  methods: {
+      handleSelect(key, keyPath) {
+        //console.log(this.items[1]);
+        this.title = this.items[key];
+      }
+    }
 }
 </script>
 
@@ -104,11 +88,11 @@ export default {
     line-height: 320px;
   }
 
-  a {
-    text-decoration:none;
-    color:#FFFFFF;
-  }
-  a:active{ color:#990033;}
+a {
+  text-decoration:none;
+  color:#FFFFFF;
+}
+a:active{ color:#990033;}
 
-  
+
 </style>

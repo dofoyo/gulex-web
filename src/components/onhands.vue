@@ -11,7 +11,7 @@
     <div v-show="isloading">
       <i class="el-icon-loading"></i>
     </div>
-    <el-table :data="list" style="width:85%" border :show-header="true" show-summary>
+    <el-table :data="list" style="width:100%" border :show-header="true" show-summary>
       <el-table-column type="index" align="right"></el-table-column>
       <el-table-column prop="code" label="代码" align="center"></el-table-column>
       <el-table-column prop="name" label="名称" align="center"></el-table-column>

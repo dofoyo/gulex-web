@@ -13,7 +13,7 @@
     </div>
     <el-table show-summary
       :data="list"
-      style="width:80%"
+      style="width:100%"
       border
       :show-header="true"
       class="el-table__body">

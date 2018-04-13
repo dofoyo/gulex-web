@@ -17,7 +17,7 @@
       @click="refresh">刷新</el-button></div>
     <el-table
       :data="list"
-      style="width:50%"
+      style="width:100%"
       border
       :show-header="true"
       class="el-table__body">
