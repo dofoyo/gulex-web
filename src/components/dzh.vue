@@ -33,6 +33,10 @@
         label="名称" align="center">
       </el-table-column>
       <el-table-column
+        prop="okYears"
+        label="入选年份" align="center">
+      </el-table-column>
+      <el-table-column
         prop="dzhDate"
         label="dzh"  
         align="center">

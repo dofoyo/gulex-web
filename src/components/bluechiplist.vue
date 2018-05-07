@@ -12,12 +12,14 @@
     <div v-show="isloading">
       <i class="el-icon-loading"></i>
     </div>
+    <div align="right">
+      系统会自动买入上涨概率大于{{buyvalue}}的股票
+    </div>
     <el-table
       :data="list"
       style="width:100%"
       border
-      :show-header="true"
-      class="el-table__body">
+      :show-header="true">
       <el-table-column
         type="index" align="center">
       </el-table-column>
@@ -45,11 +47,13 @@ export default {
     return {
       list:[],
       thedate:'',
-      isloading:true
+      isloading:true,
+      buyvalue:''
     }
   },
   mounted: function() {
     this.getData();
+    this.getBuyValue();
   },
   methods:{
     getData:function(){      
@@ -69,6 +73,24 @@ export default {
                 console.log(response);
               })
 
+    },
+    getBuyValue:function(){      
+      var vm = this;
+      vm.isloading=true;
+      var apiurl = process.env.API_ROOT + 'buyvalue';
+      this.$http.get(apiurl)
+              .then(function(response){
+                vm.buyvalue = response.data.content;
+                vm.isloading = false;
+                //console.log(vm.questions);
+             })
+              .catch(function(response) {
+                vm.isloading = false;
+                console.log("buyValue: there are something wrong!!!");
+                console.log(apiurl)
+                console.log(response);
+              })
+
     }
   }
 
@@ -79,4 +101,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+
 </style>

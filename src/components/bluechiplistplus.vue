@@ -11,7 +11,7 @@
     <div v-show="isloading">
       <i class="el-icon-loading"></i>
     </div>
-    <el-table show-summary
+    <el-table
       :data="list"
       style="width:100%"
       border
