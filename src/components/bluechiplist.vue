@@ -37,6 +37,10 @@
       </el-table-column>
     </el-table>
 
+    <div>
+      <a v-bind:href="downurl">点击下载大智慧自选股导入格式文件</a>
+    </div>
+
   </div>
 </template>
 
@@ -48,12 +52,14 @@ export default {
       list:[],
       thedate:'',
       isloading:true,
-      buyvalue:''
+      buyvalue:'',
+      downurl:''
     }
   },
   mounted: function() {
     this.getData();
     this.getBuyValue();
+    this.downurl = process.env.API_ROOT + 'downbluechips';
   },
   methods:{
     getData:function(){      

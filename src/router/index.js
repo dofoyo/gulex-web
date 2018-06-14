@@ -10,6 +10,8 @@ import valuechart from '@/components/valuechart'
 import onhands from '@/components/onhands'
 import dzh from '@/components/dzh'
 import readme from '@/components/readme'
+import pb from '@/components/pb'
+
 
 Vue.use(Router)
 
@@ -70,6 +72,11 @@ export default new Router({
       path: '/readme',
       name: 'readme',
       component: readme
+    },
+    {
+      path: '/pb',
+      name: 'pb',
+      component: pb
     }
   ]
 })

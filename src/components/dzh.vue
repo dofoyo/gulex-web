@@ -12,9 +12,10 @@
       <i class="el-icon-loading"></i>
     </div>
 
-    <div align="right"><el-button type="primary" icon="el-icon-upload2" 
-      @click="doSelect">上传</el-button><el-button type="primary" icon="el-icon-refresh" 
-      @click="refresh">刷新</el-button></div>
+    <div align="right">
+      <el-button type="primary" icon="el-icon-upload2" @click="doSelect">上传</el-button>
+      <el-button type="primary" icon="el-icon-refresh" @click="refresh">刷新</el-button>
+    </div>
     <el-table
       :data="list"
       style="width:100%"
@@ -33,6 +34,10 @@
         label="名称" align="center">
       </el-table-column>
       <el-table-column
+        prop="ipoDate"
+        label="ipo" align="center">
+      </el-table-column>
+      <el-table-column
         prop="okYears"
         label="入选年份" align="center">
       </el-table-column>
@@ -48,6 +53,10 @@
       <input type="file" id="selectFile" name="selectFile" accept="text/plain" v-on:change="upload" multiple="multiple">
     </div>
 
+    <div>
+      <a v-bind:href="downurl">点击下载大智慧自选股导入格式文件</a>
+    </div>
+  
   </div>
 </template>
 
@@ -58,11 +67,13 @@ export default {
     return {
       list:[],
       thedate:'',
-      isloading:true
+      isloading:true,
+      downurl:''
     }
   },
   mounted: function() {
-    this.getData();
+    this.getData();    
+    this.downurl = process.env.API_ROOT + 'downdzh';
   },
   methods:{
     getData:function(){      
@@ -84,6 +95,7 @@ export default {
     },
     upload:function (e) {
           var vm = this;
+          vm.isloading=true;
           var apiurl = process.env.API_ROOT + 'updzh';
           //e.preventDefault();
           let supportedTypes = ['text/plain'];
@@ -103,6 +115,7 @@ export default {
           }
           
           this.$http.post(apiurl, formData, config).then(function (res) {
+                vm.isloading=false;
                 //console.log(res);
                 vm.$message({
                     showClose: true,
@@ -118,6 +131,7 @@ export default {
       },
       doRefresh:function(){
         var vm = this;
+        vm.isloading=true;
         var apiurl = process.env.API_ROOT + 'refresh';
         let formData = new FormData();
         let config = {
@@ -127,6 +141,7 @@ export default {
         }
         this.$http.post(apiurl, formData, config).then(function (res) {
                 //console.log(res);
+                vm.isloading=false;
                 vm.$message({
                     showClose: true,
                     message: "完成刷新！",
