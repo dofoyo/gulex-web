@@ -1,61 +1,42 @@
 <template>
 <div align="center">
-<!--   <div>
-  <el-date-picker
-    v-model="thedate"
-    type="date"
-    placeholder="选择日期"
-    @change="getData">
-  </el-date-picker>
-</div> -->
     <div v-show="isloading">
       <i class="el-icon-loading"></i>
     </div>
-     <el-table
+    <el-table
       :data="list"
       style="width:100%"
       border
       :show-header="true">
       <el-table-column
-        type="index">
+        type="index" align="center">
+      </el-table-column>
+      <el-table-column
+        prop="code"
+        label="代码" align="center">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        label="名称" align="center">
       </el-table-column>
       <el-table-column
         prop="dateString"
-        label="日期"  align="center" sortable>
+        label="日期"  align="center">
       </el-table-column>
       <el-table-column
-        prop="stockcode"
-        label="代码"  align="center" sortable>
+        prop="descript"
+        label="内容"  align="center">
       </el-table-column>
-      <el-table-column
-        prop="stockname"
-        label="名称"  align="center" sortable>
-      </el-table-column>
-      <el-table-column
-        prop="buyorsell"
-        label="买入/卖出"  align="center">
-      </el-table-column>
-      <el-table-column
-        prop="price"
-        label="价格"  align="right">
-      </el-table-column>
-      <el-table-column
-        prop="quantity"
-        label="数量"  align="right">
-      </el-table-column >
-
-
     </el-table>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Bluechips',
+  name: 'jdhs',
   data () {
     return {
       list:[],
-      thedate:'',
       isloading:true
     }
   },
@@ -66,15 +47,15 @@ export default {
     getData:function(){      
       var vm = this;
       vm.isloading=true;
-      var apiurl = process.env.API_ROOT + 'simulations';
+      var apiurl = process.env.API_ROOT + 'jdh';
       this.$http.get(apiurl)
               .then(function(response){
-                vm.isloading=false;
                 vm.list = response.data.content;
+                vm.isloading = false;
                 //console.log(vm.questions);
              })
               .catch(function(response) {
-                vm.isloading=false;
+                vm.isloading = false;
                 console.log("getData: there are something wrong!!!");
                 console.log(apiurl)
                 console.log(response);
@@ -82,13 +63,5 @@ export default {
 
     }
   }
-
-
-
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-</style>

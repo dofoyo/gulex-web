@@ -11,6 +11,9 @@ import onhands from '@/components/onhands'
 import dzh from '@/components/dzh'
 import readme from '@/components/readme'
 import pb from '@/components/pb'
+import jdh from '@/components/jdh'
+import fingerpost from '@/components/fingerpost'
+import menu from '@/components/menu'
 
 
 Vue.use(Router)
@@ -20,7 +23,7 @@ export default new Router({
     {
       path: '/',
       redirect: {
-        name: 'bluechiplist'
+        name: 'fingerpost'
       }
     },
     {
@@ -77,6 +80,21 @@ export default new Router({
       path: '/pb',
       name: 'pb',
       component: pb
+    },
+    {
+      path: '/jdh',
+      name: 'jdh',
+      component: jdh
+    },
+    {
+      path: '/fingerpost',
+      name: 'fingerpost',
+      component: fingerpost
+    },
+    {
+      path: '/menu',
+      name: 'menu',
+      component: menu
     }
   ]
 })

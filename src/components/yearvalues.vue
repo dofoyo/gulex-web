@@ -1,9 +1,5 @@
 <template>
    <div align="center">
-    <div>
-      <img src="/static/valuebar201804.png">
-    </div>
-    <p></p>
     <div v-show="isloading">
       <i class="el-icon-loading"></i>
     </div>
