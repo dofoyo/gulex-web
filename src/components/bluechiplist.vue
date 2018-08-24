@@ -1,19 +1,8 @@
 <template>
 <div align="center">
-<!--   <div>
-  <el-date-picker
-    v-model="thedate"
-    type="date"
-    placeholder="选择日期"
-    @change="getData">
-  </el-date-picker>
-</div> -->
-    
+
     <div v-show="isloading">
       <i class="el-icon-loading"></i>
-    </div>
-    <div align="right">
-      系统会自动买入上涨概率大于{{buyvalue}}的股票
     </div>
     <el-table
       :data="list"
@@ -31,9 +20,15 @@
         prop="name"
         label="名称" align="center">
       </el-table-column>
+
       <el-table-column
-        prop="upProbability"
-        label="上涨概率"  align="center">
+        prop="ipoDate"
+        label="IPO" align="center">
+      </el-table-column>
+
+      <el-table-column
+        prop="okYears"
+        label="入选年报">
       </el-table-column>
     </el-table>
 
@@ -52,13 +47,11 @@ export default {
       list:[],
       thedate:'',
       isloading:true,
-      buyvalue:'',
       downurl:''
     }
   },
   mounted: function() {
     this.getData();
-    this.getBuyValue();
     this.downurl = process.env.API_ROOT + 'downbluechips';
   },
   methods:{
@@ -75,24 +68,6 @@ export default {
               .catch(function(response) {
                 vm.isloading = false;
                 console.log("getData: there are something wrong!!!");
-                console.log(apiurl)
-                console.log(response);
-              })
-
-    },
-    getBuyValue:function(){      
-      var vm = this;
-      vm.isloading=true;
-      var apiurl = process.env.API_ROOT + 'buyvalue';
-      this.$http.get(apiurl)
-              .then(function(response){
-                vm.buyvalue = response.data.content;
-                vm.isloading = false;
-                //console.log(vm.questions);
-             })
-              .catch(function(response) {
-                vm.isloading = false;
-                console.log("buyValue: there are something wrong!!!");
                 console.log(apiurl)
                 console.log(response);
               })

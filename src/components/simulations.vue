@@ -43,7 +43,10 @@
         prop="quantity"
         label="数量"  align="right">
       </el-table-column >
-
+      <el-table-column
+        prop="note"
+        label="备注"  align="left">
+      </el-table-column >
 
     </el-table>
   </div>

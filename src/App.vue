@@ -9,11 +9,12 @@
            >
             <el-submenu index="0">
               <template slot="title">GULEX</template>
-                <el-menu-item index="0"><router-link to="/fingerpost">交易提示</router-link></el-menu-item>
-                <el-menu-item index="1"><router-link to="/simulations">交易明细</router-link></el-menu-item>
-                <el-menu-item index="2"><router-link to="/simulationplus">个股盈亏</router-link></el-menu-item>
-                <el-menu-item index="3"><router-link to="/onhands">当前持仓</router-link></el-menu-item>
-                <el-menu-item index="4"><router-link to="/yearvalues">净值</router-link></el-menu-item>
+                <el-menu-item index="0"><router-link to="/bluechiplist">候选股</router-link></el-menu-item>
+                <el-menu-item index="1"><router-link to="/fingerpost">交易提示</router-link></el-menu-item>
+                <el-menu-item index="2"><router-link to="/simulations">交易明细</router-link></el-menu-item>
+                <el-menu-item index="3"><router-link to="/simulationplus">个股盈亏</router-link></el-menu-item>
+                <el-menu-item index="4"><router-link to="/onhands">当前持仓</router-link></el-menu-item>
+                <el-menu-item index="5"><router-link to="/yearvalues">净值</router-link></el-menu-item>
                 <el-menu-item index="6"><router-link to="/readme">说明</router-link></el-menu-item>
             </el-submenu>
             
@@ -33,8 +34,8 @@ export default {
   name: 'App',
   data() {
       return {
-        title: '交易提示',
-        items:['交易提示','交易明细','个股盈亏','当前持仓','净值','说明']
+        title: '候选股',
+        items:['候选股','交易提示','交易明细','个股盈亏','当前持仓','净值','说明']
       };
     },
   methods: {

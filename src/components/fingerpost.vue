@@ -33,7 +33,7 @@
           </el-table-column>
           <el-table-column
             prop="buysell"
-            label="交易"  align="center">
+            label="提示"  align="center">
           </el-table-column>
           <el-table-column
             prop="descript"
