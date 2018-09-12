@@ -34,7 +34,7 @@ export default {
   name: 'App',
   data() {
       return {
-        title: '候选股',
+        title: '交易提示',
         items:['候选股','交易提示','交易明细','个股盈亏','当前持仓','净值','说明']
       };
     },

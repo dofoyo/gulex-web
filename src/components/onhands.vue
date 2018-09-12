@@ -16,11 +16,11 @@
       <el-table-column prop="code" label="代码" align="center"></el-table-column>
       <el-table-column prop="name" label="名称" align="center"></el-table-column>
       <el-table-column prop="tradeDate" label="买入日期" align="center" sortable></el-table-column>
-      <el-table-column prop="quantity" label="数量" align="right"></el-table-column>
-      <el-table-column prop="cost" label="成本" align="right"></el-table-column>
-      <el-table-column prop="price" label="现价" align="right"></el-table-column>
-      <el-table-column prop="value" label="市值" align="right" sortable></el-table-column>
-      <el-table-column prop="profit" label="盈亏" align="right" sortable></el-table-column>
+      <el-table-column prop="quantity" label="数量（股）" align="right"></el-table-column>
+      <el-table-column prop="cost" label="成本（元）" align="right"></el-table-column>
+      <el-table-column prop="price" label="现价（元）" align="right"></el-table-column>
+      <el-table-column prop="value" label="市值（元）" align="right" sortable></el-table-column>
+      <el-table-column prop="profit" label="盈亏（元）" align="right" sortable></el-table-column>
     </el-table>
   </div>
 </template>

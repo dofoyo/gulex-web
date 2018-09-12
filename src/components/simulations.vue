@@ -37,11 +37,11 @@
       </el-table-column>
       <el-table-column
         prop="price"
-        label="价格"  align="right">
+        label="价格（元）"  align="right">
       </el-table-column>
       <el-table-column
         prop="quantity"
-        label="数量"  align="right">
+        label="数量（股）"  align="right">
       </el-table-column >
       <el-table-column
         prop="note"

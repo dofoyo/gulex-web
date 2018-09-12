@@ -22,15 +22,15 @@
       <el-table-column prop="stockcode" label="代码"  align="center" sortable></el-table-column>
       <el-table-column prop="stockname" label="名称"  align="center" sortable></el-table-column>
 
-      <el-table-column prop="quantity" label="数量"  align="right"> </el-table-column >
+      <el-table-column prop="quantity" label="数量（股）"  align="right"> </el-table-column >
 
       <el-table-column prop="buyDate" label="买入日期"  align="center" sortable> </el-table-column>
-      <el-table-column  prop="buyPrice" label="买入价格"  align="right">  </el-table-column>
+      <el-table-column  prop="buyPrice" label="买入价格（元）"  align="right">  </el-table-column>
 
       <el-table-column prop="sellDate"  label="卖出日期"  align="center" sortable>  </el-table-column>
-      <el-table-column prop="sellPrice"  label="卖出(最新)价格"  align="right"> </el-table-column>
+      <el-table-column prop="sellPrice"  label="卖出(最新)价格（元）"  align="right"> </el-table-column>
 
-      <el-table-column prop="profit"  label="盈亏"  align="right" sortable> </el-table-column>
+      <el-table-column prop="profit"  label="盈亏（元）"  align="right" sortable> </el-table-column>
 
     </el-table>
   </div>

@@ -17,15 +17,15 @@
       </el-table-column>
       <el-table-column
         prop="cash"
-        label="现金"  align="right">
+        label="现金（元）"  align="right">
       </el-table-column>
       <el-table-column
         prop="value"
-        label="市值"  align="right">
+        label="市值（元）"  align="right">
       </el-table-column>
       <el-table-column
         prop="total"
-        label="合计"  align="right">
+        label="合计（元）"  align="right">
       </el-table-column>
     </el-table>
   </div>

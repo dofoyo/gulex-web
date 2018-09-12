@@ -18,15 +18,19 @@
         </el-table-column>
         <el-table-column
           prop="cash"
-          label="现金"  align="right">
+          label="现金（元）"  align="right">
         </el-table-column>
         <el-table-column
           prop="value"
-          label="市值"  align="right">
+          label="市值（元）"  align="right">
         </el-table-column>
         <el-table-column
           prop="total"
-          label="净值"  align="right">
+          label="净值（元）"  align="right">
+        </el-table-column>
+        <el-table-column
+          prop="rate"
+          label="年均收益率（%）"  align="right">
         </el-table-column>
       </el-table>
     </div>

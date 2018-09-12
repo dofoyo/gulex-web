@@ -23,7 +23,7 @@ export default new Router({
     {
       path: '/',
       redirect: {
-        name: 'bluechiplist'
+        name: 'fingerpost'
       }
     },
     {
