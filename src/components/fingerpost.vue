@@ -32,12 +32,16 @@
             label="日期"  align="center">
           </el-table-column>
           <el-table-column
+            prop="price"
+            label="价格"  align="center">
+          </el-table-column>
+          <el-table-column
             prop="buysell"
             label="提示"  align="center">
           </el-table-column>
           <el-table-column
             prop="descript"
-            label="因由"  align="center">
+            label="因由"  align="left">
           </el-table-column>
     </el-table>
 
@@ -48,12 +52,16 @@
           label="日期"  align="center">
         </el-table-column>
         <el-table-column
+          prop="price"
+          label="价格"  align="center">
+        </el-table-column>
+        <el-table-column
           prop="buysell"
-          label="交易"  align="center">
+          label="提示"  align="center">
         </el-table-column>
         <el-table-column
           prop="descript"
-          label="因由"  align="center">
+          label="因由"  align="left">
         </el-table-column>
       </el-table>
     </el-dialog>
