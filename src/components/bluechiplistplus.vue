@@ -43,7 +43,7 @@
 
       <el-table-column
         prop="aboveAv120Days"
-        label="近100日内股价在120日线上天数">
+        label="近100日内股价在120日线上天数" sortable>
       </el-table-column>      
 
       <el-table-column
@@ -58,7 +58,7 @@
 
       <el-table-column
         prop="upProbability"
-        label="上涨概率"  align="center">
+        label="上涨概率"  align="center" sortable>
       </el-table-column>
 
     </el-table>

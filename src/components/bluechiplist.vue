@@ -23,7 +23,7 @@
 
       <el-table-column
         prop="ipoDate"
-        label="IPO" align="center">
+        label="IPO" align="center" sortable>
       </el-table-column>
 
       <el-table-column
