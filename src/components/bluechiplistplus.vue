@@ -42,8 +42,8 @@
       </el-table-column>
 
       <el-table-column
-        prop="aboveAv120Days"
-        label="近100日内股价在120日线上天数" sortable>
+        prop="aboveAv60Days"
+        label="近100日内股价在60日线上天数" sortable>
       </el-table-column>      
 
       <el-table-column
